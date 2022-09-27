@@ -1,12 +1,12 @@
 # 1. Create a VPC
-vpc_name = "Euroleague_VPC"
+vpc_name = "Project_VPC"
 vpc_cidr = "10.0.0.0/16"
 public_source_cidr = ["0.0.0.0/0"]
 public_source_cidr_v6 = ["::/0"]
 #azs = ["ap-south-1a","ap-south-1b","ap-south-1c"]
 
 # 2. Create a Internet Gateway
-ig_name = "Euroleague_IG"
+ig_name = "Project_IG"
 
 # 1.3. Create 2 Route tables
 public_rt = "PUBLIC_RT"
@@ -44,7 +44,7 @@ public_access_sg_ingress_rules = [
 ### ----------- EC2 nodes
 ami_id = "ami-0843f7c45354d48b5"
 ec2_node_cnt = 1
-ssh_key_name = "Euroleague_Dev"
+ssh_key_name = "Project_Dev"
 instance_type = "t2.micro"
 role_name = "EC2_Role"
 user_data_file = "instance_user_data.sh"
@@ -55,17 +55,17 @@ db_class = "db.m6g.large"
 db_delete_protect = "false"
 db_engine = "postgres"
 db_engine_version = "12.9"
-db_name = "euroleague_db"
+db_name = "Project_db"
 db_para_group_name = "default.postgres12"
-db_pass = "56iOMbgAlf8HAja"
+db_pass = "Test-NotHere"
 db_storage = 100
 db_storage_type = "gp2"
-db_username = "euroleague"
+db_username = "Project"
 is_storage_encrypted = "true"
 max_allocated_storage_value = 500
 muli_az_enable = "true"
 ## Proxy name
-db_proxy_name = "euroleague-db-proxy" 
+db_proxy_name = "Project-db-proxy" 
 ## Proxy debug_logging
 proxy_debug_login = "true"
 ## Engine Family
@@ -75,14 +75,14 @@ db_proxy_idle_timeout = 1800
 ## proxy tls enable
 tls_require = "false"  
 ## proxy security group
-db_proxy_secret_arn = "arn:aws:secretsmanager:ca-central-1:285308278095:secret:euroleague/db/cred-JWAyzF"
+db_proxy_secret_arn = "arn:aws:secretsmanager:ca-central-1:123456789:secret:Project/db/cred-JWAyzF"
 ## Proxy IAM role ARV
 db_proxy_role = "arn:aws:iam::285308278095:role/rds-proxy-role"
 
 ################### Cognito ############
-pool_name = "euroleague"
-client_name = "euroleague_client"
-d_prefix = "euroleague_285308278095"
+pool_name = "Project"
+client_name = "Project_client"
+d_prefix = "Project_123456789"
 ################# DB Proxy with Proxy module ###############
 kms_key_id = "44e856ea-5258-47a0-80f9-44c4ec486cf4"
 env_id = "Dev"
